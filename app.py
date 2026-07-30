@@ -9,6 +9,15 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+
+@app.route("/")
+def home():
+    return jsonify({
+        "status": "API Running",
+        "message": "Use POST /chat"
+    })
+
+
 llm = LLM(
     model="openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
     api_key=os.getenv("OPENROUTER_API_KEY"),
