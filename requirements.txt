@@ -1,1 +1,6 @@
-
+@app.route("/")
+def home():
+    return jsonify({
+        "status": "API Running",
+        "message": "Use POST /chat"
+    })
